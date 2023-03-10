@@ -11,7 +11,6 @@ from rest_framework.test import APIClient
 from cinema.models import Movie, MovieSession, CinemaHall, Genre, Actor
 from cinema.serializers import MovieListSerializer, MovieDetailSerializer
 
-
 MOVIE_SESSION_URL = reverse("cinema:moviesession-list")
 MOVIE_URL = reverse("cinema:movie-list")
 
