@@ -37,6 +37,8 @@ create and fill .env file as shown in .env_sample file
 Docker should be installed
 
 ```python
+git clone https://github.com/Terrrya/DRF-Cinema-dockerize.git
+cd DRF-Cinema-dockerize
 docker-compose up
 ```
 Open in browser 127.0.0.1:8000/api/ 
