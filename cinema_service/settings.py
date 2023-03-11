@@ -176,12 +176,12 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(
         minutes=int(os.environ["ACCESS_TOKEN_LIFETIME"])
     )
-    if os.environ["ACCESS_TOKEN_LIFETIME"]
+    if "ACCESS_TOKEN_LIFETIME" in os.environ.keys()
     else timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(
         minutes=int(os.environ["REFRESH_TOKEN_LIFETIME"])
     )
-    if os.environ["REFRESH_TOKEN_LIFETIME"]
+    if "REFRESH_TOKEN_LIFETIME" in os.environ.keys()
     else timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
 }
