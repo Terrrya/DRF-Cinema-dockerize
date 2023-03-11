@@ -39,10 +39,19 @@ Docker should be installed
 ```python
 docker-compose up
 ```
-Open in browser 127.0.0.1:8000
+Open in browser 127.0.0.1:8000/api/ 
 
 ## Getting access
 <hr>
 
+You can use following superuser:
+- Email: admin.user@cinema.com
+- Password: 1qazcde3
+
+Or create another one by yourself:
 - create user via api/user/register/
-- get access token via api/user/token/
+
+To work with token use:
+- get access token and refresh token via api/user/token/
+- verify access token via api/user/token/verify/
+- refresh access token via api/user/token/refresh/
