@@ -130,7 +130,7 @@ TIME_ZONE = "UTC"
 
 USE_I18N = True
 
-USE_TZ = False
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -173,7 +173,15 @@ SPECTACULAR_SETTINGS = {
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ACCESS_TOKEN_LIFETIME": timedelta(
+        minutes=int(os.environ["ACCESS_TOKEN_LIFETIME"])
+    )
+    if os.environ["ACCESS_TOKEN_LIFETIME"]
+    else timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(
+        minutes=int(os.environ["REFRESH_TOKEN_LIFETIME"])
+    )
+    if os.environ["REFRESH_TOKEN_LIFETIME"]
+    else timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
 }
